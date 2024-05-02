@@ -1,5 +1,4 @@
-// 
-
+//IIFE for pokemonRepository
 let pokemonRepository = (function () {
   //Pokemom list array
 let pokemonList = [
@@ -17,16 +16,30 @@ let pokemonList = [
   //Function to add new pokemon to the list
   function add(pokemon) {
     if (typeof pokemon === "object") {
-      pokemonList.push(pokemon);
-    } else {
-      console.log("You need to add a Pokemon object");
+      if (Object.keys(pokemon).length === 0) {
+        console.log("You need to add a Pokemon object with name, height and types");
+      } else if (Object.keys(pokemon).length > 3) {
+        console.log("You can only add a Pokemon object with name, height and types");
+      } else if (Object.keys(pokemon).length < 3) {
+        console.log("You need to add a Pokemon object with name, height and types");
+      } else if (Object.keys(pokemon).includes("name") === false) {
+        console.log("You need to add a Pokemon object with name");
+      } else if (Object.keys(pokemon).includes("height") === false) {
+        console.log("You need to add a Pokemon object with height");
+      } else if (Object.keys(pokemon).includes("types") === false) {
+        console.log("You need to add a Pokemon object with types");
+      } else if (Object.keys(pokemon).includes("name") && Object.keys(pokemon).includes("height") && Object.keys(pokemon).includes("types")) {
+        pokemonList.push(pokemon);
+      } else {
+        console.log("You need to add a Pokemon object with name, height and types");
+      }
     }
   }
 
   //Function to get all pokemon from the list
   function getAll() {
     return pokemonList;
-  }
+  } 
 
   //Function to show details of the pokemon
    //Function to show details of each Pokémon
@@ -35,7 +48,7 @@ let pokemonList = [
     let pokemonDetails = document.querySelector(".pokemon-details");
     pokemonDetails.innerHTML = pokemon.name + " (height: " + pokemon.height + ")";
     return pokemon;
-  };
+  }
 
     //Function to add list item to the DOM
     function addListItem(pokemon) {
@@ -59,15 +72,26 @@ let pokemonList = [
 
 })();
 
-// //Create h1 element with text "Pokémon List" 
-// document.write("<h1>Pokémon List</h1>");
+//Add new pokemon to the list
+pokemonRepository.add({ name: "Pikachu", height: 0.4, types: ["electric"] });
 
-/* Create unordered list element and use  forEach loop 
-* to display Pokémon name and height in list items.
-* Add conditional to display message if height is greater than 1.5
-*/
+//Get all pokemon from the list
 pokemonRepository.getAll().forEach(function (pokemon) { 
   pokemonRepository.addListItem(pokemon);
 });
 
+//Search functionality
+pokemonRepository.getAll().filter(function () {
+  document.querySelector(".searchForm").addEventListener("input", function (event) {
+    let pokemonList = document.querySelectorAll(".button-class");
+    let searchInput = event.target.value.toLowerCase();
+    pokemonList.forEach(function (pokemon) {
+      if (pokemon.innerText.toLowerCase().indexOf(searchInput) > -1) {
+        pokemon.style.display = "";
+      } else {
+        pokemon.style.display = "none";
+      }
+    });
+  });
+});
 
