@@ -14,19 +14,20 @@ let pokemonList = [
 //Create h1 element with text "Pokémon List" 
 document.write("<h1>Pokémon List</h1>");
 
-/*Create unordered list element with for loop 
-to display each Pokémon name and height
-Add conditional to display message if height is greater than 1.5*/
+/* Create unordered list element and use  forEach loop 
+* to display Pokémon name and height in list items.
+* Add conditional to display message if height is greater than 1.5
+*/
 document.write("<ul>");
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write("<li>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ")");
-  
-  //Add conditional to display message if height is greater than 1.5
-  if (pokemonList[i].height > 1.5) {
+pokemonList.forEach(function (pokemon) { 
+  document.write("<li>" + pokemon.name + " (height: " + pokemon.height + ")");
+  if (pokemon.height > 1.5) {
     document.write(" - Wow, that's big!");
   }
   document.write("</li>");
-}
+});
 document.write("</ul>");
 
 console.log(pokemonList);
+
+
