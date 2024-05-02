@@ -54,6 +54,7 @@ let pokemonList = [
     function addListItem(pokemon) {
       let pokemonList = document.querySelector(".pokemon-list");
       let listPokemon = document.createElement("li");
+      listPokemon.style.listStyle = "none";
       let button = document.createElement("button");
       button.innerText = pokemon.name;
       button.classList.add("button-class");
@@ -80,7 +81,7 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
 
-//Search functionality
+//Search for a pokemon
 pokemonRepository.getAll().filter(function () {
   document.querySelector(".searchForm").addEventListener("input", function (event) {
     let pokemonList = document.querySelectorAll(".button-class");
