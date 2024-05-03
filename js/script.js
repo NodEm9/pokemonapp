@@ -15,25 +15,17 @@ let pokemonList = [
   
   //Function to add new pokemon to the list
   function add(pokemon) {
-    if (typeof pokemon === "object") {
-      if (Object.keys(pokemon).length === 0) {
-        console.log("You need to add a Pokemon object with name, height and types");
-      } else if (Object.keys(pokemon).length > 3) {
-        console.log("You can only add a Pokemon object with name, height and types");
-      } else if (Object.keys(pokemon).length < 3) {
-        console.log("You need to add a Pokemon object with name, height and types");
-      } else if (Object.keys(pokemon).includes("name") === false) {
-        console.log("You need to add a Pokemon object with name");
-      } else if (Object.keys(pokemon).includes("height") === false) {
-        console.log("You need to add a Pokemon object with height");
-      } else if (Object.keys(pokemon).includes("types") === false) {
-        console.log("You need to add a Pokemon object with types");
-      } else if (Object.keys(pokemon).includes("name") && Object.keys(pokemon).includes("height") && Object.keys(pokemon).includes("types")) {
-        pokemonList.push(pokemon);
-      } else {
-        console.log("You need to add a Pokemon object with name, height and types");
-      }
+    if (typeof pokemon !== "object") {
+      console.log("You need to add a Pokemon object.");
+      return;
     }
+  
+    if (!pokemon.name || !pokemon.height || !pokemon.types || Object.keys(pokemon).length !== 3) {
+      console.log("You need to add a Pokemon object with name, height, and types.");
+      return;
+    }
+
+    pokemonList.push(pokemon);
   }
 
   //Function to get all pokemon from the list
@@ -41,17 +33,8 @@ let pokemonList = [
     return pokemonList;
   } 
 
-  //Function to show details of the pokemon
-   //Function to show details of each Pokémon
-  function showDetails(pokemon) {
-    console.log(pokemon);
-    let pokemonDetails = document.querySelector(".pokemon-details");
-    pokemonDetails.innerHTML = pokemon.name + " (height: " + pokemon.height + ")";
-    return pokemon;
-  }
-
     //Function to add list item to the DOM
-    function addListItem(pokemon) {
+    function addPokemonDetails(pokemon) {
       let pokemonList = document.querySelector(".pokemon-list");
       let listPokemon = document.createElement("li");
       listPokemon.style.listStyle = "none";
@@ -63,12 +46,21 @@ let pokemonList = [
       button.addEventListener("click", function(event) {
         showDetails(pokemon);
       });
-    }
+  }
+  
+   //Function to show details of the pokemon
+   //Function to show details of each Pokémon
+   function showDetails(pokemon) {
+    console.log(pokemon);
+    let pokemonDetails = document.querySelector(".pokemon-details");
+    pokemonDetails.innerHTML = pokemon.name + " (height: " + pokemon.height + ")";
+    return pokemon;
+  }
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addPokemonDetails: addPokemonDetails,
   };
 
 })();
@@ -78,7 +70,7 @@ pokemonRepository.add({ name: "Pikachu", height: 0.4, types: ["electric"] });
 
 //Get all pokemon from the list
 pokemonRepository.getAll().forEach(function (pokemon) { 
-  pokemonRepository.addListItem(pokemon);
+  pokemonRepository.addPokemonDetails(pokemon);
 });
 
 //Search for a pokemon
