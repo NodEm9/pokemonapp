@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+header {
+  grid-column: 1 / -1;
+  color: #fff;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+main {
+  grid-column: 1 / -1;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+form {
+  margin: 10px 0;
+}
+
+#searchInput {
+  font-size: 16px;
+  padding: 3px 5px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: none;
+}
+
+#searchInput:focus, 
+#searchBtn:focus {
+  border: #0000ff;
+}
+
+#searchBtn {
+  background-color: #0f06ca;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 5px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #ffffff;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button-class {
+  display: inline-block;
+  background-color: #0f06ca;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 3px 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.2s ;
+}
+
+.button-class:hover,
+.button-class:focus {
+  opacity: 0.8;
+  color: white;
+}
+
+footer {
+  grid-column: 1 / -1;
+  color: #fff;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  h1 {
+    padding: 10px 0;
+    font-size: 32px;
+  }
+
+  .pokemon {
+    margin: 25px 0;
+  }
+
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .button-class {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 10px 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  label {
+    display: none;
+  }
+
+  #searchInput {
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+  #searchBtn {
+    padding: 10px 35px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  
+}
+
+@media screen and (min-width: 500px) and (max-width: 750px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+  }
+}
