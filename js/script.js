@@ -34,9 +34,10 @@ let pokemonList = [
   } 
 
     //Function to add list item to the DOM
-    function addPokemonDetails(pokemon) {
+    function addListItem(pokemon) {
       let pokemonList = document.querySelector(".pokemon-list");
       let listPokemon = document.createElement("li");
+      listPokemon.classList.add("pokemon-list__item");
       listPokemon.style.listStyle = "none";
       let button = document.createElement("button");
       button.innerText = pokemon.name;
@@ -60,7 +61,7 @@ let pokemonList = [
   return {
     add: add,
     getAll: getAll,
-    addPokemonDetails: addPokemonDetails,
+    addListItem: addListItem,
   };
 
 })();
@@ -70,7 +71,7 @@ pokemonRepository.add({ name: "Pikachu", height: 0.4, types: ["electric"] });
 
 //Get all pokemon from the list
 pokemonRepository.getAll().forEach(function (pokemon) { 
-  pokemonRepository.addPokemonDetails(pokemon);
+  pokemonRepository.addListItem(pokemon);
 });
 
 //Search for a pokemon
