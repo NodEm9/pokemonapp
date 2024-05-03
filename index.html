@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokemon App</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <header>
-    <h1>Pokemon App</h1>
-  </header>
-
-  <main>
-    <section>
-      <h2>Search for a Pokemon</h2>
-      <form id="searchForm" class="searchForm">
-        <input type="text" id="searchInput" placeholder="Enter a Pokemon name or number">
-        <button type="submit">Search</button>
-      </form>
-    </section>
-    <section>
-      <h2>Pokemon List</h2>
-      <p>Click on each Pokemon to display its details.</p>
-      <div class="pokemon-details"></div>
-      <ul class="pokemon-list"></ul>
-    </section>
-  </main>
-  
-  <script src="/js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon App</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pokédex</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Search for a Pokémon</h2>
+        <!-- Search form -->
+        <form id="searchForm" class="searchForm">
+          <label for="searchInput">Search: </label>
+          <input
+            type="text"
+            id="searchInput"
+            name="search"
+            placeholder="Enter a Pokemon name"
+          />
+          <button type="submit" id="searchBtn">Search</button>
+        </form>
+      </section>
+      <!-- Pokémon List -->
+      <section class="pokemon">
+        <h2>Pokémon List</h2>
+        <p>Click on each Pokémon to display its details.</p>
+        <div class="pokemon-details"></div>
+        <ul class="pokemon-list"></ul>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Pokédex App</p>
+    </footer>
+    <script src="js/tota11y.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
