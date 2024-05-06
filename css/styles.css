@@ -18,9 +18,13 @@ body {
 
 header {
   grid-column: 1 / -1;
-  color: #fff;
-  padding: 10px 10px;
+  color: #000000;
   text-align: center;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 32px;
 }
 
 main {
@@ -29,20 +33,25 @@ main {
   margin: auto;
   overflow: hidden;
 }
-.search > h2 {
-  font-size: 16px;
-}
 
 form {
-  margin: 10px 0;
+  display: flex;
+  margin: 30px 0px;
+  justify-content: center;
+  width: 100%;
 }
 
-#searchInput {
+label {
+  display: none;
+}
+
+form #searchInput   {
   font-size: 16px;
-  padding: 3px 5px;
+  padding: 5px 5px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
+  width: 70%;
 }
 
 #searchInput:focus, 
@@ -58,7 +67,13 @@ form {
   padding: 4px 5px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  width: auto;
 }
+
+/* .pokemon h2 {
+  text-align: center;
+  margin: 30px 0;
+} */
 
 .pokemon-list {
   display: flex;
@@ -107,12 +122,39 @@ footer {
   }
 
   h1 {
-    padding: 10px 0;
-    font-size: 64px;
+    font-size: 36px;
   }
 
   .pokemon {
     margin: 25px 0;
+  }
+
+  .pokemon h2 {
+    margin: 20px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  label {
+    display: none;
+  }
+
+  form #searchInput {
+    font-size: 16px;
+    padding: 15px 55px;
+    border-radius: 10px;
+    width: 80%;
+  }
+
+ form #searchBtn {
+    padding: 15px 55px;
+    margin-top: 15px;
+    border-radius: 10px;
   }
 
   .pokemon-list {
@@ -126,29 +168,6 @@ footer {
     margin: 10px 0;
     padding: 15px 15px;
     width: auto;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
-  }
-
-  label {
-    display: none;
-  }
-
-  #searchInput {
-    font-size: 16px;
-    padding: 10px 15px;
-    border-radius: 10px;
-  }
-
-  #searchBtn {
-    padding: 10px 35px;
-    margin-top: 5px;
-    border-radius: 10px;
   }
   
 }
