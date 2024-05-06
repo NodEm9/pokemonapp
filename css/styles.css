@@ -29,6 +29,9 @@ main {
   margin: auto;
   overflow: hidden;
 }
+.search > h2 {
+  font-size: 16px;
+}
 
 form {
   margin: 10px 0;
@@ -58,9 +61,9 @@ form {
 }
 
 .pokemon-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   color: #fff;
   margin: 10px 0;
   padding: 10px;
@@ -69,14 +72,15 @@ form {
 
 .button-class {
   display: inline-block;
-  background-color: #0f06ca;
-  border: none;
-  color: white;
+  width: 110px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 3px 2px;
+  border: 1px solid #000000;
   border-radius: 5px;
   cursor: pointer;
   transition: opacity 0.2s ;
@@ -85,7 +89,8 @@ form {
 .button-class:hover,
 .button-class:focus {
   opacity: 0.8;
-  color: white;
+  border: 1px solid #0f06ca;
+  font-weight: 700;
 }
 
 footer {
@@ -103,7 +108,7 @@ footer {
 
   h1 {
     padding: 10px 0;
-    font-size: 32px;
+    font-size: 64px;
   }
 
   .pokemon {
@@ -111,6 +116,7 @@ footer {
   }
 
   .pokemon-list {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -118,7 +124,8 @@ footer {
     display: block;
     font-size: 20px;
     margin: 10px 0;
-    padding: 10px 15px;
+    padding: 15px 15px;
+    width: auto;
   }
 
   form {
