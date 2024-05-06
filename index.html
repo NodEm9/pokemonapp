@@ -18,28 +18,26 @@
       <h1>Pokédex</h1>
     </header>
     <main>
-      <section class="my-search">
-        <h2>Search for a Pokémon</h2>
+      <div class="my-search">
         <!-- Search form -->
         <form  class="searchForm">
           <label for="searchInput">Search: </label>
           <input
             type="text"
             id="searchInput"
-            name="search"
-            placeholder="Enter a Pokemon name"
+            name="searchInput"
+            placeholder="Search for a Pokémon"
           />
           <button type="submit" id="searchBtn">Search</button>
         </form>
-      </section>
+      </div>
       <!-- Pokémon List -->
-      <section class="pokemon">
-        <h2>Pokémon List</h2>
+      <div class="pokemon">
         <div id="modal-container"></div>
         <div class="pokemon-details"></div>
         <p class="loading"></p>
         <ul class="pokemon-list"> </ul>
-      </section>
+      </div>
     </main>
     <!-- Footer -->
     <footer>
