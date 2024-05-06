@@ -114,17 +114,14 @@ pokemonRepository.loadList().then(function () {
 });
 
 //Search for a pokemon
-pokemonRepository.getAll().filter(function () {
-  document.querySelector(".searchForm").addEventListener("input", function (event) {
-    let pokemonList = document.querySelectorAll(".button-class");
-    let searchInput = event.target.value.toLowerCase();
-    pokemonList.forEach(function (pokemon) {
-      if (pokemon.innerText.toLowerCase().indexOf(searchInput) > -1) {
-        pokemon.style.display = "";
-      } else {
-        pokemon.style.display = "none";
-      }
-    });
+document.querySelector(".searchForm").addEventListener("input", function (event) {
+  let pokemonList = document.querySelectorAll(".button-class");
+  let searchInput = event.target.value.toLowerCase();
+  pokemonList.forEach(function (pokemon) {
+    if (pokemon.innerText.toLowerCase().indexOf(searchInput) > -1) {
+      pokemon.style.display = "";
+    } else {
+      pokemon.style.display = "none";
+    }
   });
 });
-
