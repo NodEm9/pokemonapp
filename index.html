@@ -35,9 +35,10 @@
       <!-- Pokémon List -->
       <section class="pokemon">
         <h2>Pokémon List</h2>
-        <p>Click on each Pokémon to display its details.</p>
+        <div id="modal-container"></div>
         <div class="pokemon-details"></div>
-        <ul class="pokemon-list"></ul>
+        <p class="loading"></p>
+        <ul class="pokemon-list"> </ul>
       </section>
     </main>
     <!-- Footer -->
@@ -45,6 +46,8 @@
       <p>&copy; 2024 Pokédex App</p>
     </footer>
     <script src="js/tota11y.min.js"></script>
+    <script src="/js/promise-polyfill.js"></script>
+    <script src="/js/fetch-polyfill.js"></script>
     <script src="/js/script.js"></script>
   </body>
 </html>
