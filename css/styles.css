@@ -18,9 +18,9 @@ body {
 
 header {
   grid-column: 1 / -1;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
-  background-color: #ffffff;
+  height: 80px;
 }
 
 h1 {
@@ -64,16 +64,16 @@ form #searchInput   {
   color: white;
   border: none;
   cursor: pointer;
-  padding: 4px 5px;
+  padding: 5px 5px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   width: auto;
 }
 
-/* .pokemon h2 {
+.pokemon h2 {
   text-align: center;
   margin: 30px 0;
-} */
+}
 
 .pokemon-list {
   display: flex;
@@ -108,6 +108,107 @@ form #searchInput   {
   font-weight: 700;
 }
 
+#dialog-container {
+  display: none;
+}
+
+#dialog-container.is-visible {
+  display: grid;
+  position: fixed;
+  text-align: left;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; 
+}
+
+ .dialog {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  color: #000000;
+  margin: auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 4px;
+}
+
+#show-dialog, #show-modal {
+  background-color: #0f06ca;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 5px;
+  width: auto;
+}
+
+.dialog-close {
+  float: right;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: grid;
+  position: fixed;
+  text-align: center;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; 
+}
+
+ .modal-confirm, .modal-cancel{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  border: none;
+  cursor: pointer;
+  background-color: darkgray;
+}
+
+.modal {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  color: #000000;
+  margin: auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 4px;
+}
+
+.modal-close {
+  float: right;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
 footer {
   grid-column: 1 / -1;
   color: #fff;
@@ -119,6 +220,10 @@ footer {
   body {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  header {
+    height: 100px;
   }
 
   h1 {
