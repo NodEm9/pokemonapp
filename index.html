@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon App</title>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -20,7 +20,7 @@
     <main>
       <div class="my-search">
         <!-- Search form -->
-        <form  class="searchForm">
+        <form class="searchForm">
           <label for="searchInput">Search: </label>
           <input
             type="text"
@@ -30,13 +30,17 @@
           />
           <button type="submit" id="searchBtn">Search</button>
         </form>
+        <button id="show-dialog">show Dialog</button>
+
+        <div id="dialog-container"></div>
       </div>
+
       <!-- Pokémon List -->
       <div class="pokemon">
         <div id="modal-container"></div>
         <div class="pokemon-details"></div>
         <p class="loading"></p>
-        <ul class="pokemon-list"> </ul>
+        <ul class="pokemon-list"></ul>
       </div>
     </main>
     <!-- Footer -->
@@ -47,5 +51,6 @@
     <script src="/js/promise-polyfill.js"></script>
     <script src="/js/fetch-polyfill.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/dialog.js"></script>
   </body>
 </html>
