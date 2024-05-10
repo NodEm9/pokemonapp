@@ -18,10 +18,14 @@ body {
 
 header {
   grid-column: 1 / -1;
-  color: #ffffff;
   text-align: center;
-  height: 80px;
 }
+
+.nav-item .active {
+  color: #008000;
+  background-color: #0000ff;
+}
+
 
 h1 {
   font-size: 32px;
@@ -29,14 +33,15 @@ h1 {
 
 main {
   grid-column: 1 / -1;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  padding: 20px 20px;
   overflow: hidden;
 }
 
 form {
   display: flex;
-  margin: 30px 0px;
+  margin: 50px 0px;
   justify-content: center;
   width: 100%;
 }
@@ -45,16 +50,22 @@ label {
   display: none;
 }
 
-form #searchInput   {
+form #searchInput {
   font-size: 16px;
-  padding: 5px 5px;
+  padding: 15px 10px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
   width: 70%;
 }
 
-#searchInput:focus, 
+form img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+#searchInput:focus,
 #searchBtn:focus {
   border: #0000ff;
 }
@@ -64,10 +75,14 @@ form #searchInput   {
   color: white;
   border: none;
   cursor: pointer;
-  padding: 5px 5px;
+  padding: 15px 5px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   width: auto;
+}
+
+.pokemon {
+  background-color: #000000;
 }
 
 .pokemon h2 {
@@ -75,138 +90,50 @@ form #searchInput   {
   margin: 30px 0;
 }
 
-.pokemon-list {
-  display: flex;
-  flex-wrap: wrap;
+.list-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  color: #fff;
+  color: #000000;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
 }
 
-.button-class {
+.btn-primary {
   display: inline-block;
-  width: 110px;
-  background-color: #ffffff;
+  width: 100%;
   color: rgb(0, 0, 0);
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
   margin: 3px 2px;
   border: 1px solid #000000;
   border-radius: 5px;
   cursor: pointer;
-  transition: opacity 0.2s ;
+  transition: opacity 0.2s;
 }
 
-.button-class:hover,
-.button-class:focus {
-  opacity: 0.8;
-  border: 1px solid #0f06ca;
+.btn-primary:hover,
+.btn-primary:focus {
+  opacity: 0.7;
   font-weight: 700;
-}
-
-#dialog-container {
-  display: none;
-}
-
-#dialog-container.is-visible {
-  display: grid;
-  position: fixed;
-  text-align: left;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto; 
-}
-
- .dialog {
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: #fefefe;
+  background-color: transparent;
   color: #000000;
-  margin: auto;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  border-radius: 4px;
-}
-
-#show-dialog, #show-modal {
-  background-color: #0f06ca;
-  color: white;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  padding: 5px 15px;
-  border-radius: 5px;
-  width: auto;
-}
-
-.dialog-close {
-  float: right;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: underline;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-}
-
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: grid;
-  position: fixed;
-  text-align: center;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto; 
-}
-
- .modal-confirm, .modal-cancel{
-  font-size: 14px;
-  font-weight: 400;
-  padding: 5px 10px;
-  margin: 5px 5px;
-  border: none;
-  cursor: pointer;
-  background-color: darkgray;
 }
 
 .modal {
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: #fefefe;
   color: #000000;
-  margin: auto;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  border-radius: 4px;
 }
 
-.modal-close {
-  float: right;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: underline;
-  border: none;
-  cursor: pointer;
-  background: transparent;
+.modal-body {
+  color: #000000;
+  font-weight: 500;
+}
+
+.modal-header {
+  color: #000000;
+  font-weight: 700;
 }
 
 footer {
@@ -256,29 +183,62 @@ footer {
     width: 80%;
   }
 
- form #searchBtn {
+  form #searchBtn {
     padding: 15px 55px;
     margin-top: 15px;
     border-radius: 10px;
   }
 
-  .pokemon-list {
+  .list-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
-  .button-class {
-    display: block;
-    font-size: 20px;
-    margin: 10px 0;
-    padding: 15px 15px;
-    width: auto;
-  }
-  
 }
 
-@media screen and (min-width: 500px) and (max-width: 750px) {
+@media all and (min-width: 500px) and (max-width: 750px) {
   body {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  .list-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media all and (min-width: 750px) and (max-width: 1000px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  main {
+    padding: 20px 40px;
+  }
+
+  .list-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+
+/* Shared styles for mobile and tablet */
+@media all and (max-width: 750px) {
+  body {
+    grid-template-columns: 1fr;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+  main {
+    padding: 20px 40px;
+  }
+
+  .list-group {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
