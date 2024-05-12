@@ -103,6 +103,12 @@ form img {
   border-radius: 5px;
 }
 
+.list-group span {
+  display: block;
+  color: #ffffff;
+  margin: 0 5px;
+}
+
 .btn-primary {
   display: inline-block;
   width: 100%;
