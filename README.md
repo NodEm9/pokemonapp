@@ -1,5 +1,7 @@
 # A Sample Pokédex Application
 
+**Developer:** ***Emmanuel Nodol***
+
 **This** application is a school achievement project I built along with a jQuery To-Do app to conclude my second achievement during my Full-Stack Web Development Course at [CareerFoundry](https://careerfoundry.com/en/referral_registrations/new?referral=Z7BGvXrP).
 
 
